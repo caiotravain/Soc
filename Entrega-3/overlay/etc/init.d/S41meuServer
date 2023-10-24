@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+        start
+        /usr/bin/python3 /etc/server/server.py &
+        ;;
+  stop)
+        stop
+        ;;
+  restart|reload)
+        restart
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+

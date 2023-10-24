@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caio's Led Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            color: antiquewhite;
+
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: blueviolet;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+            margin-right: 10px;
+
+        }
+
+        .result {
+            font-weight: bold;
+        }
+
+        .image-container {
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 1000px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Caio's Led Control</h1>
+    <form action="/" method="post">
+        <label for="user_text">Enter something:</label>
+        <input type="submit" id="user_text" name="user_text" value="liga">
+        <input type="submit" id="user_text" name="user_text" value="desliga">
+        <input type="submit" id="user_text" name="user_text" value="ler">
+        <input type="submit" id="user_text" name="user_text" value="live">
+
+    </form>
+
+    <p class="result">Resultado: {{ result }}</p>
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='image.jpeg') }}" alt="image" id = "liveImage"/>
+    </div>
+</body>
+<!-- script to refresh the page every 5 seconds -->
+<script>
+    setInterval(function() {
+    window.location.href = window.location.href;  // Force a GET request
+}, 5000);
+
+</script>
+</html>
+
